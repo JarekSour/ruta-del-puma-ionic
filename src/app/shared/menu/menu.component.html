@@ -1,0 +1,18 @@
+<ion-list>
+    <ion-item class="data-user">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <img [img-preloader]="user.IMG_URL" img-type="avatar">
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <p class="name">{{user.NAME}}</p>
+                    <p class="email">{{user.EMAIL}}</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-item>
+    <ion-item button (click)="closeSession()">Cerrar Sesión</ion-item>
+</ion-list>

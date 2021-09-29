@@ -1,0 +1,19 @@
+.data-user{
+    text-align: center;
+    img {
+        border-radius: 50%;
+        width: 60%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .name{
+        margin: 0;
+    }
+
+    .email{
+        color: #a5a5a5;
+        font-size: 14px;
+    }
+}

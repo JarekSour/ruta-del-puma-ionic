@@ -1,5 +1,7 @@
 {
   "name": "ruta-del-puma-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
