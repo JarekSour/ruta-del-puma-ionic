@@ -7,7 +7,18 @@
             <p>{{item.label | uppercase}}</p>
         </ion-card>
         <ion-card (click)="openEmergencias()">
-            <img src="assets/images/emergencias/emergencias.png" alt="">
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="8">
+                        <h3>NÚMEROS DE</h3>
+                        <h4>EMERGENCIA</h4>
+                    </ion-col>
+                    <ion-col>
+                        <img src="assets/images/emergencias/emergencias.png" alt="">
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
         </ion-card>
     </div>
 </ion-content>
