@@ -1,3 +1,101 @@
-<p>
-  detail works!
-</p>
+<app-header></app-header>
+
+<ion-content fullscreen>
+    <div class="container-img">
+        <ion-img alt="Aragrill Fusion" [src]="avatar"></ion-img>
+        <div class="centered">
+            <p>{{nombre | uppercase}}</p>
+        </div>
+    </div>
+
+    <ion-card>
+        <ion-card-content class="bio">
+            <p>{{descripcion}}</p>
+            <div class="item">
+                <p>Ubicación:</p>
+                <p>{{direccion | uppercase}}</p>
+            </div>
+            <div class="item">
+                <p>Correo electrónico:</p>
+                <p>{{email}}</p>
+            </div>
+            <div class="item">
+                <p>N° Contacto:</p>
+                <p>+56{{telefono}}</p>
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <div class="images">
+        <div *ngFor="let item of images">
+            <img (click)="zoom(item)" [src]="item">
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button class="btn-orange">
+            <ion-icon md="caret-up" ios="chevron-up-circle-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button class="btn-orange" (click)="showRoute()">
+                <ion-icon name="navigate"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button class="btn-orange" (click)="makeCall()">
+                <ion-icon name="call"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button class="btn-orange" (click)="sendEmail()">
+                <ion-icon name="mail"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+
+    <ion-card>
+        <div class="form-puntuacion">
+            <p>Dejanos tu puntuación</p>
+            <div>
+                <ion-icon name="star" [ngClass]="stars >= 1 ? 'enable':'disable'" (click)="setPuntuacion(1)"></ion-icon>
+                <ion-icon name="star" [ngClass]="stars >= 2 ? 'enable':'disable'" (click)="setPuntuacion(2)"></ion-icon>
+                <ion-icon name="star" [ngClass]="stars >= 3 ? 'enable':'disable'" (click)="setPuntuacion(3)"></ion-icon>
+                <ion-icon name="star" [ngClass]="stars >= 4 ? 'enable':'disable'" (click)="setPuntuacion(4)"></ion-icon>
+                <ion-icon name="star" [ngClass]="stars == 5 ? 'enable':'disable'" (click)="setPuntuacion(5)"></ion-icon>
+            </div>
+        </div>
+        <form class="form-comentario" [formGroup]="formComentario" (ngSubmit)="onSubmint()">
+            <ion-item class="ion-no-padding">
+                <ion-label position="floating">Si deseas escribe alguna reseña aquí</ion-label>
+                <ion-textarea rows="4" maxlength="150" formControlName="MESSAGE"></ion-textarea>
+            </ion-item>
+            <div class="ion-text-right">
+                <ion-button size="small" type="submint">Enviar</ion-button>
+            </div>
+        </form>
+    </ion-card>
+
+    <div class="comentario">
+        <div *ngFor="let item of comentarios">
+            <h3>{{item.NAME}}
+                <span>
+                    <ion-icon name="star" [ngClass]="item.SCORE >= 1 ? 'enable':'disable'"></ion-icon>
+                    <ion-icon name="star" [ngClass]="item.SCORE >= 2 ? 'enable':'disable'"></ion-icon>
+                    <ion-icon name="star" [ngClass]="item.SCORE >= 3 ? 'enable':'disable'"></ion-icon>
+                    <ion-icon name="star" [ngClass]="item.SCORE >= 4 ? 'enable':'disable'"></ion-icon>
+                    <ion-icon name="star" [ngClass]="item.SCORE == 5 ? 'enable':'disable'"></ion-icon>
+                </span>
+            </h3>
+            <p>{{item.MESSAGE}}</p>
+            <p class="date">{{item.DATE | date:'dd/MM/YYYY'}}</p>
+        </div>
+    </div>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadCommentarios($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Cargando comentarios...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+    <ion-card class="form-nothing" *ngIf="dvShowNotComments">
+        <em>Nadie ha ecrito aún...</em>
+    </ion-card>
+
+</ion-content>

@@ -1,3 +1,62 @@
-<p>
-  bussines works!
-</p>
+<app-header></app-header>
+
+<ion-content fullscreen>
+
+    <h3>
+        <ion-icon class="icon" name="chevron-forward-outline"></ion-icon>
+        <span class="text">{{title | uppercase}}</span>
+    </h3>
+
+    <div *ngIf="empresas.length == 0 && !loadingCard" class="row nothing">
+        <div class="col-12">
+            <img src="assets/images/sad.png">
+        </div>
+        <div class="col-12 mt-3">
+            <p>Lo sentimos, pero no hemos encontrado<br> nada según la busqueda...</p>
+        </div>
+    </div>
+
+    <div *ngIf="loadingCard">
+        <ion-card  *ngFor="let dummy of ' '.repeat(4).split('')">
+            <div class="container-img">
+                <ion-skeleton-text animated></ion-skeleton-text>
+            </div>
+            <ion-card-content>
+                <div class="category">
+                    <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+                </div>
+                <div class="name">
+                    <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                </div>
+                <div>
+                    <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <div *ngIf="empresas.length > 0 && !loadingCard">
+        <ion-card *ngFor="let item of empresas" (click)="goToDetalle(item.ID_EMPRESA)">
+            <div class="container-img">
+                <div *ngIf="item.PUNTUACION" class="nota">
+                    <span>{{item.PUNTUACION | number : '1.0-1'}}</span>
+                </div>
+                <ion-img [alt]="item.NAME" [img-preloader]="item.AVATAR.URL_IMAGEN" [img-type]="imgType">
+                </ion-img>
+            </div>
+            <ion-card-content>
+                <div class="category">
+                    <span *ngFor="let tag of item.ETIQUETA">{{tag.NAME}}</span>
+                </div>
+                <div class="name">
+                    <p>{{item.NAME}}</p>
+                </div>
+                <div>
+                    {{item.ADRESS}}
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>
+

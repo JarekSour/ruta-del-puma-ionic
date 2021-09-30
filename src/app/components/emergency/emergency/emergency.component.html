@@ -1,3 +1,25 @@
-<p>
-  emergency works!
-</p>
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+    <h3>
+        <ion-icon class="icon" name="chevron-forward-outline"></ion-icon>
+        <span class="text">Teléfonos de emergencias</span>
+    </h3>
+
+    <ion-card *ngFor="let item of emergencias">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <img src="{{item.image}}" />
+                </ion-col>
+                <ion-col>
+                    <p>{{item.nombre}}</p>
+                    <ion-chip (click)="callEmergencia(item.numero)">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <ion-label>Llamar al {{item.numero}}</ion-label>
+                      </ion-chip>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+</ion-content>

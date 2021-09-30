@@ -1,3 +1,26 @@
-<p>
-  index works!
-</p>
+<ion-content [fullscreen]="true">
+
+    <div id="container">
+        <section class="logo">
+            <img src="assets/images/index.png" />
+        </section>
+
+        <section class="social">
+
+            <ion-chip class="facebook" (click)="facebookSignIn()">
+                <ion-icon name="logo-facebook"></ion-icon>
+                <ion-label>Continuar con Facebook</ion-label>
+            </ion-chip>
+            <br>
+            <ion-chip class="google" (click)="googleSignIn()">
+                <ion-icon name="logo-google"></ion-icon>
+                <ion-label>Continuar con Google</ion-label>
+            </ion-chip>
+            <br>
+            <ion-chip class="twitter" (click)="twitterSignIn()">
+                <ion-icon name="logo-twitter"></ion-icon>
+                <ion-label>Continuar con Twitter</ion-label>
+            </ion-chip>
+        </section>
+    </div>
+</ion-content>

@@ -25,12 +25,23 @@ import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 import { CallNumber } from '@ionic-native/call-number/ngx';
 import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
+import { HomePage } from './components/home/home/home.page';
+import { IndexComponent } from './components/index/index/index.component';
+import { BussinesComponent } from './components/bussines/bussines/bussines.component';
+import { DetailComponent } from './components/detail/detail/detail.component';
+import { EmergencyComponent } from './components/emergency/emergency/emergency.component';
+
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         MenuComponent,
-        ImageDirective
+        ImageDirective,
+        IndexComponent,
+        HomePage,
+        BussinesComponent,
+        DetailComponent,
+        EmergencyComponent
     ],
     entryComponents: [],
     imports: [

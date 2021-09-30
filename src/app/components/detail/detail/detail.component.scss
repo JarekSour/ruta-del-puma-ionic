@@ -1,0 +1,138 @@
+.container-img {
+    height: 130px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: #000;
+    ion-img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0.4;
+        filter: alpha(opacity=40);
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+    }
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+    }
+}
+
+.bio{
+    .item{
+        p{
+            margin:0;
+        }
+        p:first-child{
+            color :rgb(167, 167, 167);
+            font-weight: 500;
+            font-size: 15px;
+        }
+        p:nth-child(2){
+            font-weight: 300;
+            color: #000;
+            font-size: 16px;
+        }
+    }
+}
+
+@media(min-width: 0px) {
+    .images {
+        margin: 10px 10px;
+        column-count: 2;
+    }
+}
+@media(min-width: 420px) {
+    .images {
+        margin: 10px 10px;
+        column-count: 2;
+    }
+}
+@media(min-width: 720px) {
+    .images {
+        margin: 10px 10px;
+        column-count: 4;
+    }
+}
+
+.btn-orange{
+    --background: #ff9300;
+}
+
+#map {
+    margin: 10px 10px;
+    width: 100%;
+    height: 180px;
+}
+
+::ng-deep .gmnoprint {
+    display:none;
+}
+::ng-deep .gmnoprint{
+    background:none !important;
+}
+
+.form-comentario{
+    margin: 0px 10px;
+}
+
+.form-puntuacion{
+    p{
+        text-align: center;
+        margin: 10px 0 15px 0;
+        font-weight: 400;
+        color: black;
+    }
+    div{
+        font-size: 25px;
+        text-align: center;
+    }
+}
+
+ion-icon.enable{
+    color: #ff9300;
+}
+ion-icon.disable{
+    color: #c7c7c7;
+}
+
+.comentario{
+    background: #fff;
+    margin: 10px;
+    div{
+        border-radius: 10px;
+        background: #f0f2f5;
+        color: #050505;
+        padding: 10px;
+        margin-bottom: 5px;
+        h3{
+            font-weight: 600;
+            margin: 0;
+            span{
+                float: right;
+            }
+        }
+        p{
+            color: #464646;
+            font-weight: 300;
+            margin: 0;
+        }
+        .date{
+            width: 100%;
+            text-align: right;
+            font-style: italic;
+            font-size: 12px;
+        }
+    }
+}
+
+.form-nothing{
+    padding: 5px 5px 5px 12px;
+    margin: 0 10px 20px 10px;
+    color: #191919;
+}
