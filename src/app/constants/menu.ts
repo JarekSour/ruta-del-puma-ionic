@@ -11,6 +11,10 @@ export const MENU = [{
     label: '¿Dónde comer?',
     img: 'restaurant.jpg'
 }, {
+    name: 'actividades',
+    label: 'Actividades',
+    img: 'actividades.jpg'
+},{
     name: 'donde-dormir',
     label: '¿Dónde dormir?',
     img: 'bed.jpg'

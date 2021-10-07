@@ -160,10 +160,12 @@
         <variable name="APP_ID" value="398379705023720" />
         <variable name="APP_NAME" value="Ruta del Puma" />
     </plugin>
-    <plugin name="twitter-connect-plugin" source="npm" spec="0.5.0">
+    <plugin name="twitter-connect-plugin" source="npm">
         <param name="FABRIC_KEY" value="AIzaSyDTGxVL74sXchI6frJXVATBA_tIjVLptyw" />
         <param name="TWITTER_KEY" value="FcD6jqixVYKgvxCR9TedfQ0W2" />
         <param name="TWITTER_SECRET" value="DD5FRqQ5GJ8TdMqc7bfFZjU5MooCywsvWc5cjP7RC4zEprMno9" />
     </plugin>
+    <preference name="TwitterConsumerKey" value="FcD6jqixVYKgvxCR9TedfQ0W2" />
+    <preference name="TwitterConsumerSecret" value="DD5FRqQ5GJ8TdMqc7bfFZjU5MooCywsvWc5cjP7RC4zEprMno9" />
     <allow-navigation href="http://localhost:8100" sessionid="b0a30be6" />
 </widget>

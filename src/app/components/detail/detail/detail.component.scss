@@ -31,12 +31,12 @@
         p:first-child{
             color :rgb(167, 167, 167);
             font-weight: 500;
-            font-size: 15px;
+            font-size: 4.8vw;
         }
         p:nth-child(2){
             font-weight: 300;
             color: #000;
-            font-size: 16px;
+            font-size: 3.9vw;
         }
     }
 }
@@ -113,6 +113,7 @@ ion-icon.disable{
         h3{
             font-weight: 600;
             margin: 0;
+            font-size: 5vw;
             span{
                 float: right;
             }

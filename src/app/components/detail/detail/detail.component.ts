@@ -179,10 +179,16 @@ export class DetailComponent implements OnInit {
     }
 
     loadCommentarios(event) {
-
         this.http.post(environment.comentarios.getComentarios, { ID_EMPRESA: this.id_empresa, page: this.page }).then((response: any) => {
             if (response.status) {
 
+                response.data.data.map(e => {
+                    if(e.NAME.split(' ').length > 1){
+                        let lastname = e.NAME.split(' ')[e.NAME.split(' ').length - 1]
+                        let char =  '*'.repeat(lastname.split('').length)
+                        e.NAME = `${e.NAME.split(' ')[0]} ${char}`
+                    }
+                })
                 this.comentarios = this.comentarios.concat(response.data.data)
                 this.page++
 
@@ -211,10 +217,18 @@ export class DetailComponent implements OnInit {
         } else if (this.formComentario.valid) {
             this.http.post(environment.comentarios.sendComentario, this.formComentario.value).then(async (response: any) => {
                 if (response.status) {
+
+                    let name = JSON.parse(localStorage.getItem('_r')).NAME
+                    if(name.split(' ').length > 1){
+                        let lastname = name.split(' ')[name.split(' ').length - 1]
+                        let char =  '*'.repeat(lastname.split('').length)
+                        name = `${name.split(' ')[0]} ${char}`
+                    }
+
                     this.comentarios.unshift({
                         DATE: response.data,
                         MESSAGE: this.formComentario.controls.MESSAGE.value,
-                        NAME: JSON.parse(localStorage.getItem('_r')).NAME,
+                        NAME: name,
                         SCORE: this.formComentario.controls.SCORE.value
                     })
 

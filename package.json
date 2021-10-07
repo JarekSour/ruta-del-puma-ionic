@@ -9,6 +9,7 @@
         "build": "ionic cordova build --release --prod android",
         "device": "ionic cordova run android --prod --release --device",
         "emulador": "ionic cordova run android --emulator -l -c --release",
+        "list": "ionic cordova run android --list",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
@@ -16,8 +17,8 @@
         "get-hash-facebook": "keytool -list -printcert -jarfile ruta-del-puma.apk",
         "get-hash-google": "keytool -keystore rutadelpuma.keystore -list -v",
         "build-device": "ionic cordova build --release android",
-        "jarsigner": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore rutadelpuma.keystore ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk alias_name",
-        "zipalign": "zipalign -v 4 ./platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk ruta-del-puma.apk"
+        "jarsigner": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore rutadelpuma.keystore ./platforms/android/app/build/outputs/apk/release/app-release.apk alias_name",
+        "zipalign": "zipalign -v 4 ./platforms/android/app/build/outputs/apk/release/app-release.apk ruta-del-puma.apk"
     },
     "private": true,
     "dependencies": {
@@ -39,8 +40,8 @@
         "@ionic-native/google-plus": "^5.36.0",
         "@ionic-native/launch-navigator": "^5.36.0",
         "@ionic-native/photo-viewer": "^5.36.0",
-        "@ionic-native/twitter-connect": "^5.36.0",
         "@ionic/angular": "^5.5.2",
+        "@numetalsour/twitter-connect": "^5.36.1",
         "rxjs": "~6.6.0",
         "tslib": "^2.2.0",
         "zone.js": "~0.11.4"

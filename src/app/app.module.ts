@@ -15,7 +15,7 @@ import { MenuComponent } from './shared/menu/menu.component';
 
 import { GooglePlus } from '@ionic-native/google-plus/ngx'
 import { Facebook } from '@ionic-native/facebook/ngx';
-import { TwitterConnect } from '@ionic-native/twitter-connect/ngx';
+import { TwitterConnect } from '@numetalsour/twitter-connect/ngx';
 import { HttpService } from './services/http.service';
 
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';

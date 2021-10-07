@@ -19,12 +19,12 @@ h3{
         position: absolute;
         top: 15px;
         right: 0;
-        background: #4dd119;
+        background: #f68200;
         color: white;
         transform: skewY(25deg);
         padding: 5px 5px 2px 5px;
         span{
-            font-size: 25px;
+            font-size: 7vw;
         }
     }
     ion-img{
@@ -56,20 +56,30 @@ ion-card-content{
     .name{
         p{
             color: #000;
-            margin: 0;
+            margin: 3px 0 0 0;
+            font-size: 5vw;
         }
+    }
+    .direccion{
+        font-size: 3.5vw;
     }
 }
 
 .nothing{
     text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
     img{
         height: 100px;
-        margin-top: 100px;
     }
     p{
         margin: 30px 0 0 0;
-        font-style: italic
+        font-style: italic;
+        font-size: 4.5vw;
     }
 }
 

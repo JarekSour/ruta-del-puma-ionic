@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
-import { TwitterConnect } from '@ionic-native/twitter-connect/ngx';
+import { TwitterConnect } from '@numetalsour/twitter-connect/ngx';
 
 @Component({
     selector: 'app-menu',

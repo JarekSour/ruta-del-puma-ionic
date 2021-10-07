@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
-import { TwitterConnect } from '@ionic-native/twitter-connect/ngx';
+import { TwitterConnect } from '@numetalsour/twitter-connect/ngx';
 import { AlertService } from 'src/app/services/alert.service';
 import { HttpService } from 'src/app/services/http.service';
 import { environment } from 'src/environments/environment';
@@ -63,6 +63,7 @@ export class IndexComponent implements OnInit {
                 this.twitter.verifyCredentials().then((respose: any) => {
                     console.log('respose', respose)
                 }).catch(err => {
+                    console.log('Reintente más tarde... (TE20)')
                     this.login({ userID: res.userId, NAME: err.name, EMAIL: err.email, IMG_URL: err.profile_image_url_https.replace('_normal', '') }, 'twitter')
                 })
             }, (e) => {
