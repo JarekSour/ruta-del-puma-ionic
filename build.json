@@ -6,13 +6,6 @@
             "alias": "alias_name",
             "password" : "67365605",
             "keystoreType": ""
-        },
-        "release": {
-            "keystore": "rutadelpuma.keystore",
-            "storePassword": "67365605",
-            "alias": "alias_name",
-            "password" : "67365605",
-            "keystoreType": ""
         }
     }
 }

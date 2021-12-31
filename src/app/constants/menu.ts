@@ -1,7 +1,7 @@
 export const MENU = [{
-    name: 'como-llegar',
-    label: '¿Cómo llegar?',
-    img: 'bus.jpg'
+    name: 'transporte',
+    label: 'Transporte',
+    img: 'transporte.jpg'
 }, {
     name: 'comercio',
     label: 'Comercio',

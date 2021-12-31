@@ -1,12 +1,12 @@
 {
     "name": "ruta-del-puma-ionic",
-    "version": "0.0.1",
+    "version": "1.0.1",
     "author": "Ionic Framework",
     "homepage": "https://ionicframework.com/",
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "build": "ionic cordova build --release --prod android",
+        "build": "ionic cordova build --release android",
         "device": "ionic cordova run android --prod --release --device",
         "emulador": "ionic cordova run android --emulator -l -c --release",
         "list": "ionic cordova run android --list",
@@ -14,11 +14,12 @@
         "lint": "ng lint",
         "e2e": "ng e2e",
         "keytool-generate": "keytool -genkey -v -keystore rutadelpuma.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000",
-        "get-hash-facebook": "keytool -list -printcert -jarfile ruta-del-puma.apk",
+        "get-hash-facebook": "keytool -list -printcert -jarfile ruta-del-puma.aab",
         "get-hash-google": "keytool -keystore rutadelpuma.keystore -list -v",
         "build-device": "ionic cordova build --release android",
-        "jarsigner": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore rutadelpuma.keystore ./platforms/android/app/build/outputs/apk/release/app-release.apk alias_name",
-        "zipalign": "zipalign -v 4 ./platforms/android/app/build/outputs/apk/release/app-release.apk ruta-del-puma.apk"
+        "aab":"ionic cordova build android --prod --release -- -- --packageType=bundle",
+        "jarsigner": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore rutadelpuma.keystore ./platforms/android/app/build/outputs/bundle/release/app-release.aab alias_name",
+        "zipalign": "zipalign -v 4 ./platforms/android/app/build/outputs/bundle/release/app-release.aab ruta-del-puma.aab"
     },
     "private": true,
     "dependencies": {
